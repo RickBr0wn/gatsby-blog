@@ -1,7 +1,9 @@
 module.exports = {
-  siteMetaData: {
-    title: 'My Blog',
-    description: 'My Personal Blog, powered by Gatsby.js',
+  siteMetadata: {
+    title: 'My Personal Blog',
+    description: 'My personal blog, powered by gatsby.js',
+    author: 'Rick Brown',
+    siteUrl: 'https://rickbrown.co.uk/gatsby-blog',
   },
   plugins: [
     'gatsby-transformer-remark',
