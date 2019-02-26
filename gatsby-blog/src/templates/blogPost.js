@@ -6,9 +6,10 @@ export const Template = ({ data, pageContext }) => {
   const { markdownRemark } = data
   const title = markdownRemark.frontmatter.title
   const html = markdownRemark.html
+  console.log(markdownRemark.frontmatter)
 
   return (
-    <>
+    <div style={{ margin: '0 auto', maxWidth: '1020px', padding: '20px' }}>
       <h1 style={{ fontFamily: 'avenir' }}>{title}</h1>
       <div
         className='blogpost'
@@ -21,7 +22,7 @@ export const Template = ({ data, pageContext }) => {
       <div style={{ marginBottom: '1rem', fontFamily: 'avenir' }}>
         {prev && <Link to={prev.frontmatter.path}>prev</Link>}
       </div>
-    </>
+    </div>
   )
 }
 
