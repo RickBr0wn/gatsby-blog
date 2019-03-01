@@ -40,9 +40,9 @@ When completed spin up using your chosen web server.
 
 ## ScreenShots
 
-![natours](./img/README/natours.png)
-![section_2](./img/README/section_2.png)
-![menu](./img/README/menu.png)
+![natours](./natours.png)
+![section_2](./section_2.png)
+![menu](./menu.png)
 
 ## Built With
 

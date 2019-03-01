@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'My Personal Blog',
-    description: 'A personal blog, written by Rick Brown, powered by gatsby.js',
+    title: 'Rick Brown',
+    description: 'A personal blog, powered by gatsby.js',
     author: 'Rick Brown',
     siteUrl: 'https://rickbrown.co.uk/gatsby-blog'
   },
