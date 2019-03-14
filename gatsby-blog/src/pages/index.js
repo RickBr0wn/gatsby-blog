@@ -13,7 +13,7 @@ const Layout = ({ data }) => {
         {edges.map(edge => {
           const { frontmatter } = edge.node
           return (
-            <div key={frontmatter.path} style={{ background: natoursImage }}>
+            <div key={frontmatter.path}>
               <Link to={frontmatter.path}>{frontmatter.title}</Link>
             </div>
           )
