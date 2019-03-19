@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Header from '../components/Header'
 import './styles.css'
-import natoursImage from './2019-02-26-natours/natours.png'
+import natoursImage from './2019-02-26-natours/images/natours.png'
 
 const Layout = ({ data }) => {
   const { edges } = data.allMarkdownRemark
@@ -12,9 +12,12 @@ const Layout = ({ data }) => {
       <div className='container'>
         {edges.map(edge => {
           const { frontmatter } = edge.node
+          console.log(`./${frontmatter.image.relativePath}`)
           return (
             <div key={frontmatter.path}>
-              <Link to={frontmatter.path}>{frontmatter.title}</Link>
+              <img src={`./${frontmatter.image.relativePath}`} />
+              <img src={natoursImage} />
+              <Link to={frontmatter.path}>{frontmatter.title} </Link>
             </div>
           )
         })}
@@ -33,7 +36,7 @@ export const query = graphql`
             path
             date
             image {
-              id
+              relativePath
             }
           }
         }

@@ -4,7 +4,7 @@ date: '2019-02-26'
 title: 'Natours Project'
 tags: ['SASS', 'CSS']
 excerpt: 'This is a mock website for an imaginary company that sells guided tours.'
-image: './natours.png'
+image: './images/natours.png'
 ---
 
 # Natours
@@ -41,9 +41,9 @@ When completed spin up using your chosen web server.
 
 ## ScreenShots
 
-![natours](./src/pages/natours.png)
-![section_2](./section_2.png)
-![menu](./menu.png)
+![natours](./images/natours.png)
+![section_2](./images/section_2.png)
+![menu](./images/menu.png)
 
 ## Built With
 
