@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Header from '../components/Header'
 import './styles.css'
-import natoursImage from './2019-02-26-natours/images/natours.png'
 
 const Layout = ({ data }) => {
   const { edges } = data.allMarkdownRemark
@@ -12,12 +11,12 @@ const Layout = ({ data }) => {
       <div className='container'>
         {edges.map(edge => {
           const { frontmatter } = edge.node
-          console.log(`./${frontmatter.image.relativePath}`)
+          console.log(data.file)
           return (
             <div key={frontmatter.path}>
-              <img src={`./${frontmatter.image.relativePath}`} />
-              <img src={natoursImage} />
-              <Link to={frontmatter.path}>{frontmatter.title} </Link>
+              <Link to={frontmatter.path}>
+                <img src={data.file.childImageSharp.fixed.src} />
+              </Link>
             </div>
           )
         })}
@@ -27,7 +26,18 @@ const Layout = ({ data }) => {
 }
 
 export const query = graphql`
-  query HomepageQuery {
+  query {
+    file(relativePath: { eq: "heads.jpeg" }) {
+      childImageSharp {
+        fixed(width: 700, height: 700) {
+          base64
+          width
+          height
+          src
+          srcSet
+        }
+      }
+    }
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
@@ -35,9 +45,6 @@ export const query = graphql`
             title
             path
             date
-            image {
-              relativePath
-            }
           }
         }
       }
